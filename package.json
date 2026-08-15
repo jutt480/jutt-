@@ -1,0 +1,51 @@
+{
+  "name": "ashifform-pro",
+  "productName": "AshifForm Pro",
+  "version": "1.0.0",
+  "description": "Professional desktop application for livestock feed formulation",
+  "private": true,
+  "main": "dist-electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port=3000 --host=0.0.0.0",
+    "dev:electron": "vite --port=3000 --host=0.0.0.0",
+    "build:ui": "vite build",
+    "build:electron": "esbuild electron/main.ts electron/preload.ts --outdir=dist-electron --bundle --platform=node --format=cjs --packages=external",
+    "build": "vite build && esbuild electron/main.ts electron/preload.ts --outdir=dist-electron --bundle --platform=node --format=cjs --packages=external",
+    "build:win": "npm run build && electron-builder --win",
+    "preview": "vite preview",
+    "clean": "rm -rf dist dist-electron release",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "@prisma/client": "^7.9.1",
+    "@tailwindcss/vite": "^4.1.14",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^5.0.4",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "vite": "^6.2.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "autoprefixer": "^10.4.21",
+    "electron": "^43.4.0",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.25.0",
+    "prisma": "^7.9.1",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.3"
+  }
+}

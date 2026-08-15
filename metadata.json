@@ -1,0 +1,6 @@
+{
+  "name": "AshifForm Pro",
+  "description": "Enterprise-grade livestock feed formulation and milling suite with least-cost LP simplex solver, amino acid profiling, multi-species matrix, and inventory management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
